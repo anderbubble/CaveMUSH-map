@@ -1,28 +1,19 @@
-graph G {
+graph CaveMUSH {
+        define(`graph', `subgraph')
         blocked_path[label="Path\n(blocked)" shape="diamond"]
 
-        subgraph cluster_house_0 {
-                style = filled
-                color = lightgrey
-                label = "A House"
-                house -- bedroom
-                bedroom -- bathroom
-                bedroom -- closet
-                closet -- storage_bin
-                house -- kitchen
-                back_yard[label="back yard"]
-                side_yard[label="side yard"]
-                back_yard -- garden -- further_garden
-                back_yard -- side_yard -- front_yard -- house
-        }
+        include(`house_0.dot')
+        back_yard[label="back yard"]
+        side_yard[label="side yard"]
+        back_yard -- garden -- further_garden
+        back_yard -- side_yard -- front_yard -- house
 
-        # RedWolf's yard
+        include(`redwolf_house.dot')
         RedWolf_front_yard[label="Front Yard"]
         RedWolf_back_yard[label="Back Yard"]
         arbor[label="arbor\n(locked gate)" shape="diamond"]
         Pasture[shape="box"]
         Storage[shape="box"]
-        Basement[shape="box"]
 
         RedWolf_front_yard -- "Front Porch"
         RedWolf_front_yard -- Pasture
@@ -32,76 +23,10 @@ graph G {
         RedWolf_back_yard -- arbor
         "East Side Yard" -- "East Side Porch\n(back)"
         "East Side Yard" -- Basement
-
         "West of the House" -- "Slave Quarters:\nMain Room" -- Storage
         "West of the House" -- "West Side Porch\n(front)"
 
-        subgraph cluster_house_1 {
-                style = filled
-                color = lightgrey
-                label = "RedWolf's House"
-
-                Washroom[shape="box"]
-
-                # porch
-                "Front Porch" -- "East Side Porch\n(front)"
-                "Front Porch" -- "West Side Porch\n(front)"
-                "Back Porch\n(west)" -- "West Side Porch\n(back)"
-                "Back Porch\n(west)" -- Washroom
-                "Back Porch\n(west)" -- "Back Porch\n(east)"
-                "Back Porch\n(east)" -- greenhouse
-                "East Side Porch\n(front)" -- "East Side Porch\n(back)"
-                "East Side Porch\n(back)" -- "Back Porch\n(east)"
-                "West Side Porch\n(front)" -- "Servants' Entrance"
-                "West Side Porch\n(front)" -- "West Side Porch\n(back)"
-                "West Side Porch\n(back)" -- Pantry
-
-                # upstairs
-                Steeple[shape="box"]
-                Study[shape="box"]
-                bedroom2[shape="box" label="Bedroom"]
-                bedroom3[shape="box" label="Bedroom"]
-                bathroom2[label="Bathroom"]
-                Bathtub[shape="box"]
-                "Rear Balcony"[shape="box"]
-                "Front Balcony"[shape="box"]
-                "Master Bath"[shape="box"]
-                Attic[shape="box"]
-                bathroom3[label="Bathroom" shape="box"]
-                Library[shape="box"]
-
-                "Upper Landing" -- "Hallway\n(left)"
-                "Upper Landing" -- Staircase -- Entryway
-                "Upper Landing" -- bathroom2 -- Bathtub
-                "Upper Landing" -- "Hallway\n(right)"
-
-                "Hallway\n(left)" -- "Tower\n(down)" -- "Tower\n(up)" -- Steeple
-                "Hallway\n(left)" -- Study
-                "Hallway\n(left)" -- bedroom2
-
-                "Hallway\n(right)" -- "Rear Balcony"
-                "Hallway\n(right)" -- "Master Bedroom"
-                "Master Bedroom" -- "Master Bath"
-                "Master Bedroom" -- "Front Balcony"
-                "Hallway\n(right)" -- bedroom3
-                "Hallway\n(right)" -- Attic
-
-                Entryway -- "Dining Room" -- "Servants' Passage"
-                "Servants' Passage" -- "Servants' Entrance"
-                "Servants' Passage" -- Kitchen
-                Kitchen -- Pantry
-                Kitchen -- "Hall\n(down)"
-                "Hall\n(down)" -- "Hall\n(up)"
-                "Hall\n(down)" -- Library
-                Entryway -- "Hall\n(up)"
-                "Hall\n(up)" -- bathroom3
-                Entryway -- "Front Porch"
-        }
-
         excavated_room[shape="box"]
-        storage_bin[shape="box"]
-        bathroom[shape="box"]
-        kitchen[shape="box"]
 
         further_garden -- wooded_path_2
 
@@ -193,127 +118,7 @@ graph G {
         #"NRG's (not so secret) hideout" --
         #"NRG's (not so secret) hideout" --
 
-        subgraph cluster_nrgland {
-                label="nrgland"
-                style="filled"
-                color="lightgrey"
-
-                airport -- airport_door
-                airport -- "Terminal Five" -- Undefined
-                airport -- "Outside the airport" -- airport_highway
-                airport_door[label="door\n(Airport Employees only)" shape="diamond"]
-                airport_highway[label="Highway"]
-                Undefined[shape="box"]
-
-                airport_highway -- Prison
-                airport_highway -- airport_highway
-                airport_highway -- Offramp -- empty
-                airport_highway -- "city streets"
-
-                "city streets" -- "Dream Hallway"
-                "city streets" -- "Mall\n(closed)"
-                "city streets" -- NRG_library
-                "city streets" -- "Prophet's Mansion"
-                "city streets" -- Housing -- "A Home"
-                "city streets" -- "pawn shop" -- nrg_pawn_shop_back_room
-                "city streets" -- "public park"
-                "city streets" -- McDs
-                "city streets" -- Starbucks
-                "city streets" -- "Church of nrg"
-
-                "Dream Hallway" -- "Birthday Celebration" -- "Michael Jackson Music Video"
-                "Dream Hallway" -- "Entrance to City of Ghosts"
-                "Dream Hallway" -- schoolbus -- "The back" -- "Under seat"
-                "Dream Hallway" -- "Underwater Dome"
-                "Dream Hallway" -- "Grovery Store"
-                "Dream Hallway" -- Subconscious
-
-                Subconscious -- "Nightmare Hill"
-                Subconscious -- "Sleep Vision"
-
-                "Nightmare Hill" -- "Ice Cream Plant"
-                "Nightmare Hill" -- "Insane Asylum" -- Lamppost -- "North Of Lamppost" -- "White Castle" -- Slaughterhouse
-                "Nightmare Hill" -- Slaughterfield -- "The Blood Forest"
-
-                "Ice Cream Plant" -- "Inside the Plant" -- "Factory Line"
-                "Ice Cream Plant" -- "Evil Lair" -- "Craw Tunnel" -- Playland
-
-                "Grovery Store"[shape="box"]
-                "Factory Line"[shape="box"]
-                Playland[shape="box"]
-                Slaughterhouse[shape="box"]
-                "The Blood Forest"[shape="box"]
-
-                "Underwater Dome" -- Underwater -- "Sandcastle Entrance" -- "Kingdom Square"
-                "Underwater Dome" -- underwater_dome_out
-                underwater_dome_out[label="Out\n(blocked)" shape="diamond"]
-
-                "Kingdom Square" -- "Stabula Convalescent Ward"
-                "Kingdom Square" -- "Residential Road" -- "Coral Gardens"
-
-                "Stabula Convalescent Ward"[shape="square"]
-                "Coral Gardens"[shape="square"]
-
-                "City Of Ghosts" -- "Ghost Carnival"
-                "City Of Ghosts" -- "Ghost Bar"
-                "Ghost Carnival"[shape="box"]
-                "Ghost Bar"[shape="box"]
-                "Under seat"[shape="box"]
-
-                "Michael Jackson Music Video" -- "Sugar Rock Candy Mountain"
-                "Michael Jackson Music Video" -- "Green Room" -- "A ladder"
-
-                "A ladder" -- Drawbridge -- "Start" -- "Elsewhere to Somewhere" -- "Height"
-                "A ladder" -- "Nute Vault"
-                "A ladder" -- Theater -- "projector room"
-
-                "Height" -- "Pebble Place"
-                "Height" -- City
-
-                "Pebble Place"[shape="box"]
-                City[shape="box"]
-                "Nute Vault"[shape="box"]
-                "projector room"[shape="box"]
-
-                "Sugar Rock Candy Mountain"[shape="box"]
-
-                McDs[shape="box"]
-                Starbucks[shape="box"]
-
-                "Church of nrg" -- nrg_church_empty
-                "Church of nrg" -- "Secret Passage" -- nrg_tunnel -- Hub
-                nrg_church_empty[label="empty" shape="box"]
-                nrg_tunnel[label="Tunnel"]
-
-                Hub -- "Pyrotechnic Store"
-                Hub -- "Explosive Testing Range" -- Cloud -- "Cloud Basement" -- "Undercloud Tunnel"
-                Hub -- "Leetguy's Emporium" -- Cloud
-
-                "Pyrotechnic Store"[shape="box"]
-                "Undercloud Tunnel"[shape="box"]
-
-                "public park" -- nrg_bathrooms
-                "public park" -- playground -- nrg_playground_empty
-
-                NRG_library -- "Non-Fiction Partition"
-                NRG_library -- "Fiction Partition"
-
-                "Non-Fiction Partition" -- NRG_library_stairs_closed
-                "Non-Fiction Partition" -- NRG_library_door_locked
-
-                NRG_library_stairs_closed[label="stairs\n(closed)" shape="diamond"]
-                NRG_library_door_locked[label="door\n(locked)" shape="diamond"]
-                nrg_bathrooms[label="bathrooms\n(unnecessary)" shape="diamond"]
-
-                "Mall\n(closed)"[shape="diamond"]
-                "Fiction Partition"[shape="box"]
-                "A Home"[shape="box"]
-                nrg_pawn_shop_back_room[label="Back Room" shape="box"]
-
-                Prison[shape="box"]
-                empty[shape="box"]
-                nrg_playground_empty[label="empty" shape="box"]
-        }
+        include(`nrgland.dot')
 
         "Sleep Vision" -- Church
 
@@ -357,18 +162,7 @@ graph G {
         "River Mouth" -- "Down River" -- "River Path" -- "Rocky Path\n(down)" -- "Rocky Path\n(up)" -- "Outside of Tower" -- "Thoran's Living Room"
         Path[shape="box"]
 
-        subgraph cluster_thoran_tower {
-                style=filled
-                color=lightgrey
-
-                Thoran_library[label="Library"]
-                Thoran_dining_room[label="Dining Room"]
-                Thoran_kitchen[label="Kitchen"]
-                Thoran_bedroom[label="Bedroom"]
-                Thoran_roof[label="Roof of Tower" shape="box"]
-                "Thoran's Living Room" -- Thoran_library -- Thoran_dining_room -- Thoran_kitchen -- Thoran_bedroom -- Thoran_roof
-        }
-
+        include(`thoran_tower.dot')
         "Residence Hub" -- "Residence Cave - Block 1"
         "Residence Hub" -- "Residence Cave - Block 2"
 
