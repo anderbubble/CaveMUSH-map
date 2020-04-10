@@ -1,0 +1,61 @@
+graph cluster_house_redwolf {
+        label = "RedWolf's House"
+        style = filled
+        color = lightgrey
+
+        Washroom[shape="box"]
+
+        # porch
+        "Front Porch" -- "East Side Porch\n(front)"
+        "Front Porch" -- "West Side Porch\n(front)"
+        "Back Porch\n(west)" -- "West Side Porch\n(back)"
+        "Back Porch\n(west)" -- Washroom
+        "Back Porch\n(west)" -- "Back Porch\n(east)"
+        "Back Porch\n(east)" -- greenhouse
+        "East Side Porch\n(front)" -- "East Side Porch\n(back)"
+        "East Side Porch\n(back)" -- "Back Porch\n(east)"
+        "West Side Porch\n(front)" -- "Servants' Entrance"
+        "West Side Porch\n(front)" -- "West Side Porch\n(back)"
+        "West Side Porch\n(back)" -- Pantry
+
+        # upstairs
+        Steeple[shape="box"]
+        Study[shape="box"]
+        bedroom2[shape="box" label="Bedroom"]
+        bedroom3[shape="box" label="Bedroom"]
+        bathroom2[label="Bathroom"]
+        Bathtub[shape="box"]
+        "Rear Balcony"[shape="box"]
+        "Front Balcony"[shape="box"]
+        "Master Bath"[shape="box"]
+        Attic[shape="box"]
+        bathroom3[label="Bathroom" shape="box"]
+        Library[shape="box"]
+
+        "Upper Landing" -- "Hallway\n(left)"
+        "Upper Landing" -- Staircase -- Entryway
+        "Upper Landing" -- bathroom2 -- Bathtub
+        "Upper Landing" -- "Hallway\n(right)"
+
+        "Hallway\n(left)" -- "Tower\n(down)" -- "Tower\n(up)" -- Steeple
+        "Hallway\n(left)" -- Study
+        "Hallway\n(left)" -- bedroom2
+
+        "Hallway\n(right)" -- "Rear Balcony"
+        "Hallway\n(right)" -- "Master Bedroom"
+        "Master Bedroom" -- "Master Bath"
+        "Master Bedroom" -- "Front Balcony"
+        "Hallway\n(right)" -- bedroom3
+        "Hallway\n(right)" -- Attic
+
+        Entryway -- "Dining Room" -- "Servants' Passage"
+        "Servants' Passage" -- "Servants' Entrance"
+        "Servants' Passage" -- Kitchen
+        Kitchen -- Pantry
+        Kitchen -- "Hall\n(down)"
+        "Hall\n(down)" -- "Hall\n(up)"
+        "Hall\n(down)" -- Library
+        Entryway -- "Hall\n(up)"
+        "Hall\n(up)" -- bathroom3
+        Entryway -- "Front Porch"
+}
