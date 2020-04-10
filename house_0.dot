@@ -1,0 +1,11 @@
+graph cluster_house_0 {
+        label = "A House"
+        style = filled
+        color = lightgrey
+
+        house -- bedroom
+        house -- kitchen
+
+        bedroom -- bathroom
+        bedroom -- closet -- storage_bin
+}

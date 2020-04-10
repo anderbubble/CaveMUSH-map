@@ -1,20 +1,12 @@
-graph G {
+graph CaveMUSH {
+        define(`graph', `subgraph')
         blocked_path[label="Path\n(blocked)" shape="diamond"]
 
-        subgraph cluster_house_0 {
-                style = filled
-                color = lightgrey
-                label = "A House"
-                house -- bedroom
-                bedroom -- bathroom
-                bedroom -- closet
-                closet -- storage_bin
-                house -- kitchen
-                back_yard[label="back yard"]
-                side_yard[label="side yard"]
-                back_yard -- garden -- further_garden
-                back_yard -- side_yard -- front_yard -- house
-        }
+        include(`house_0.dot')
+        back_yard[label="back yard"]
+        side_yard[label="side yard"]
+        back_yard -- garden -- further_garden
+        back_yard -- side_yard -- front_yard -- house
 
         # RedWolf's yard
         RedWolf_front_yard[label="Front Yard"]
@@ -36,10 +28,10 @@ graph G {
         "West of the House" -- "Slave Quarters:\nMain Room" -- Storage
         "West of the House" -- "West Side Porch\n(front)"
 
-        subgraph cluster_house_1 {
+        subgraph cluster_house_redwolf {
+                label = "RedWolf's House"
                 style = filled
                 color = lightgrey
-                label = "RedWolf's House"
 
                 Washroom[shape="box"]
 
@@ -358,6 +350,7 @@ graph G {
         Path[shape="box"]
 
         subgraph cluster_thoran_tower {
+                label="Thoran's tower"
                 style=filled
                 color=lightgrey
 
