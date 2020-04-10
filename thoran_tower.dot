@@ -1,0 +1,13 @@
+graph cluster_thoran_tower {
+        label="Thoran's tower"
+        style=filled
+        color=lightgrey
+
+        Thoran_library[label="Library"]
+        Thoran_dining_room[label="Dining Room"]
+        Thoran_kitchen[label="Kitchen"]
+        Thoran_bedroom[label="Bedroom"]
+        Thoran_roof[label="Roof of Tower" shape="box"]
+
+        "Thoran's Living Room" -- Thoran_library -- Thoran_dining_room -- Thoran_kitchen -- Thoran_bedroom -- Thoran_roof
+}

@@ -162,19 +162,7 @@ graph CaveMUSH {
         "River Mouth" -- "Down River" -- "River Path" -- "Rocky Path\n(down)" -- "Rocky Path\n(up)" -- "Outside of Tower" -- "Thoran's Living Room"
         Path[shape="box"]
 
-        subgraph cluster_thoran_tower {
-                label="Thoran's tower"
-                style=filled
-                color=lightgrey
-
-                Thoran_library[label="Library"]
-                Thoran_dining_room[label="Dining Room"]
-                Thoran_kitchen[label="Kitchen"]
-                Thoran_bedroom[label="Bedroom"]
-                Thoran_roof[label="Roof of Tower" shape="box"]
-                "Thoran's Living Room" -- Thoran_library -- Thoran_dining_room -- Thoran_kitchen -- Thoran_bedroom -- Thoran_roof
-        }
-
+        include(`thoran_tower.dot')
         "Residence Hub" -- "Residence Cave - Block 1"
         "Residence Hub" -- "Residence Cave - Block 2"
 
