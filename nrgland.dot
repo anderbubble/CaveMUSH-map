@@ -56,8 +56,8 @@ graph cluster_nrgland {
         "Kingdom Square" -- "Stabula Convalescent Ward"
         "Kingdom Square" -- "Residential Road" -- "Coral Gardens"
 
-        "Stabula Convalescent Ward"[shape="square"]
-        "Coral Gardens"[shape="square"]
+        "Stabula Convalescent Ward"[shape="box"]
+        "Coral Gardens"[shape="box"]
 
         "City Of Ghosts" -- "Ghost Carnival"
         "City Of Ghosts" -- "Ghost Bar"
