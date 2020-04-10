@@ -1,0 +1,121 @@
+graph cluster_nrgland {
+        label="nrgland"
+        style="filled"
+        color="lightgrey"
+
+        airport -- airport_door
+        airport -- "Terminal Five" -- Undefined
+        airport -- "Outside the airport" -- airport_highway
+        airport_door[label="door\n(Airport Employees only)" shape="diamond"]
+        airport_highway[label="Highway"]
+        Undefined[shape="box"]
+
+        airport_highway -- Prison
+        airport_highway -- airport_highway
+        airport_highway -- Offramp -- empty
+        airport_highway -- "city streets"
+
+        "city streets" -- "Dream Hallway"
+        "city streets" -- "Mall\n(closed)"
+        "city streets" -- NRG_library
+        "city streets" -- "Prophet's Mansion"
+        "city streets" -- Housing -- "A Home"
+        "city streets" -- "pawn shop" -- nrg_pawn_shop_back_room
+        "city streets" -- "public park"
+        "city streets" -- McDs
+        "city streets" -- Starbucks
+        "city streets" -- "Church of nrg"
+
+        "Dream Hallway" -- "Birthday Celebration" -- "Michael Jackson Music Video"
+        "Dream Hallway" -- "City Of Ghosts"
+        "Dream Hallway" -- schoolbus -- "The back" -- "Under seat"
+        "Dream Hallway" -- "Underwater Dome"
+        "Dream Hallway" -- "Grovery Store"
+        "Dream Hallway" -- Subconscious
+
+        Subconscious -- "Nightmare Hill"
+        Subconscious -- "Sleep Vision"
+
+        "Nightmare Hill" -- "Ice Cream Plant"
+        "Nightmare Hill" -- "Insane Asylum" -- Lamppost -- "North Of Lamppost" -- "White Castle" -- Slaughterhouse
+        "Nightmare Hill" -- Slaughterfield -- "The Blood Forest"
+
+        "Ice Cream Plant" -- "Inside the Plant" -- "Factory Line"
+        "Ice Cream Plant" -- "Evil Lair" -- "Craw Tunnel" -- Playland
+
+        "Grovery Store"[shape="box"]
+        "Factory Line"[shape="box"]
+        Playland[shape="box"]
+        Slaughterhouse[shape="box"]
+        "The Blood Forest"[shape="box"]
+
+        "Underwater Dome" -- Underwater -- "Sandcastle Entrance" -- "Kingdom Square"
+        "Underwater Dome" -- underwater_dome_out
+        underwater_dome_out[label="Out\n(blocked)" shape="diamond"]
+
+        "Kingdom Square" -- "Stabula Convalescent Ward"
+        "Kingdom Square" -- "Residential Road" -- "Coral Gardens"
+
+        "Stabula Convalescent Ward"[shape="square"]
+        "Coral Gardens"[shape="square"]
+
+        "City Of Ghosts" -- "Ghost Carnival"
+        "City Of Ghosts" -- "Ghost Bar"
+        "Ghost Carnival"[shape="box"]
+        "Ghost Bar"[shape="box"]
+        "Under seat"[shape="box"]
+
+        "Michael Jackson Music Video" -- "Sugar Rock Candy Mountain"
+        "Michael Jackson Music Video" -- "Green Room" -- "A ladder"
+
+        "A ladder" -- Drawbridge -- "Start" -- "Elsewhere to Somewhere" -- "Height"
+        "A ladder" -- "Nute Vault"
+        "A ladder" -- Theater -- "projector room"
+
+        "Height" -- "Pebble Place"
+        "Height" -- City
+
+        "Pebble Place"[shape="box"]
+        City[shape="box"]
+        "Nute Vault"[shape="box"]
+        "projector room"[shape="box"]
+
+        "Sugar Rock Candy Mountain"[shape="box"]
+
+        McDs[shape="box"]
+        Starbucks[shape="box"]
+
+        "Church of nrg" -- nrg_church_empty
+        "Church of nrg" -- "Secret Passage" -- nrg_tunnel -- Hub
+        nrg_church_empty[label="empty" shape="box"]
+        nrg_tunnel[label="Tunnel"]
+
+        Hub -- "Pyrotechnic Store"
+        Hub -- "Explosive Testing Range" -- Cloud -- "Cloud Basement" -- "Undercloud Tunnel"
+        Hub -- "Leetguy's Emporium" -- Cloud
+
+        "Pyrotechnic Store"[shape="box"]
+        "Undercloud Tunnel"[shape="box"]
+
+        "public park" -- nrg_bathrooms
+        "public park" -- playground -- nrg_playground_empty
+
+        NRG_library -- "Non-Fiction Partition"
+        NRG_library -- "Fiction Partition"
+
+        "Non-Fiction Partition" -- NRG_library_stairs_closed
+        "Non-Fiction Partition" -- NRG_library_door_locked
+
+        NRG_library_stairs_closed[label="stairs\n(closed)" shape="diamond"]
+        NRG_library_door_locked[label="door\n(locked)" shape="diamond"]
+        nrg_bathrooms[label="bathrooms\n(unnecessary)" shape="diamond"]
+
+        "Mall\n(closed)"[shape="diamond"]
+        "Fiction Partition"[shape="box"]
+        "A Home"[shape="box"]
+        nrg_pawn_shop_back_room[label="Back Room" shape="box"]
+
+        Prison[shape="box"]
+        empty[shape="box"]
+        nrg_playground_empty[label="empty" shape="box"]
+}
