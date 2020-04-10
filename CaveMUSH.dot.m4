@@ -8,15 +8,13 @@ graph CaveMUSH {
         back_yard -- garden -- further_garden
         back_yard -- side_yard -- front_yard -- house
 
-        # RedWolf's yard
+        include(`redwolf_house.dot')
         RedWolf_front_yard[label="Front Yard"]
         RedWolf_back_yard[label="Back Yard"]
         arbor[label="arbor\n(locked gate)" shape="diamond"]
         Pasture[shape="box"]
         Storage[shape="box"]
-        Basement[shape="box"]
 
-        include(`redwolf_house.dot')
         RedWolf_front_yard -- "Front Porch"
         RedWolf_front_yard -- Pasture
         RedWolf_front_yard -- "East Side Yard"

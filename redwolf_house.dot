@@ -4,6 +4,7 @@ graph cluster_house_redwolf {
         color = lightgrey
 
         Washroom[shape="box"]
+        Basement[shape="box"]
 
         # porch
         "Front Porch" -- "East Side Porch\n(front)"
