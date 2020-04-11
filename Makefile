@@ -6,11 +6,11 @@ CaveMUSH.svg: CaveMUSH.dot
 CaveMUSH.png: CaveMUSH.dot
 	dot CaveMUSH.dot -Tpng -oCaveMUSH.png
 
-CaveMUSH.dot: CaveMUSH.dot.m4 house_0.dot redwolf_house.dot nrgland.dot thoran_tower.dot
+CaveMUSH.dot: CaveMUSH.dot.m4 house_0.dot redwolf_house.dot nrgland.dot thoran_tower.dot new-york-city.dot japan.dot
 	m4 CaveMUSH.dot.m4 >CaveMUSH.dot
 
 publish: CaveMUSH.png CaveMUSH.svg
-	scp CaveMUSH.{svg,png} civilfritz.net:public_html/
+	scp CaveMUSH.svg civilfritz.net:public_html/
 
 clean:
 	rm -f CaveMUSH.{dot,png,svg}

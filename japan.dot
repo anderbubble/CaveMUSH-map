@@ -1,0 +1,11 @@
+graph cluster_japan {
+        label = "Japan"
+        style = "filled"
+        color = "lightgrey"
+
+        "Koto Docks" -- "East Tokyo"
+
+        "East Tokyo" -- "Taito Ward"
+        "East Tokyo" -- "Chuo Ward"
+        "East Tokyo" -- "North Tokyo"
+}

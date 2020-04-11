@@ -227,12 +227,20 @@ graph CaveMUSH {
         Church -- Pew
         Pew[shape="box"]
 
-        "Highway" -- "Granger Subdivision"
-        "Highway" -- "Teedle Country"
-        "Highway" -- "Strange HW"
+        "Highway" -- "Granger Subdivision" -- "Finrod's Residence" finrod_living_room
+        "Highway" -- "Teedle Country" -- Outside -- Workshop
+        "Highway" -- "Strange HW" -- Queens
         "Highway" -- "Hanny Suburbs"
         "Highway" -- "Sarrow Suburbs"
         "Highway" -- "Franklin City"
+
+        finrod_living_room[shape="box" label="Living Room"]
+        Workshop[shape="box"]
+
+        include(`new-york-city.dot')
+        include(`japan.dot')
+        "New York Harbor" -- "Koto Docks"
+        "Koto Docks" -- "Bangalla, Africa"
 
         "Wooded Path" -- "Old Dirt Road" -- "Muddy Track" -- "Dirt Track"
         "Bluebell woodland" -- "Dirt Track"
@@ -244,4 +252,10 @@ graph CaveMUSH {
         "Woodland Path" -- "Edge of the Woods" -- RedWolf_back_yard
 
         greenhouse[shape="box"]
+
+        Limbo -- "J.F.K. International Airport"
+        Limbo -- "Narita International Airport"
+        Limbo -- Mawitaan
+        Limbo -- "Shok-Tha"
+        Limbo -- "Residence Cave - Block 2"
 }

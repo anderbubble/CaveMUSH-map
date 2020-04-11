@@ -1,0 +1,170 @@
+graph cluster_new_york_city {
+        label = "New York City"
+        style = "filled"
+        color = "lightgrey"
+
+        Queens -- "Upper East Side"
+        Queens -- "Lower East Side"
+        Queens -- Brooklyn
+        Queens -- "J.F.K. International Airport"
+
+        "Upper East Side" -- "Central Park"
+        "Upper East Side" -- Midtown
+        "Upper East Side" -- Yorkville
+
+        "Central Park" -- Harlem
+        "Central Park" -- "El Barrio"
+        "Central Park" -- "Morningside Heights"
+        "Central Park" -- "Upper West Side"
+        "Central Park" -- Yorkville
+        "Central Park" -- Midtown
+
+        Harlem -- Bronx
+        Harlem -- "Hamilton Heights"
+        Harlem -- "Morningside Heights"
+        Harlem -- "El Barrio"
+
+        Bronx -- Westchester -- "North Salem" -- "Thunderhead Ranch" -- Stables -- "Patio and Ranchland" -- "Thunderhead Ranch"
+
+        "Hamilton Heights" -- "Morningside Heights"
+
+        "Morningside Heights" -- "Saint John the Divine"
+        "Morningside Heights" -- "Columbia University"
+        "Morningside Heights" -- "El Barrio"
+        "Morningside Heights" -- "Upper West Side"
+
+        "Saint John the Divine"[shape="box"]
+
+        "Columbia University" -- "Low Memorial Library"
+        "Columbia University" -- "Kent Hall"
+
+        "Low Memorial Library"[shape="box"]
+        "Kent Hall"[shape="box"]
+
+        "El Barrio" -- Yorkville
+
+        "Upper West Side" -- "Daily Grind"
+        "Upper West Side" -- Midtown
+        "Upper West Side" -- "Hell's Kitchen"
+
+        "Daily Grind"[shape="box"]
+
+        Midtown -- "Radio City Music Hall"
+        Midtown -- "Hell's Kitchen"
+        Midtown -- "Murray Hill"
+        Midtown -- "Times Square"
+
+        "Radio City Music Hall"[shape="box"]
+
+        "Hell's Kitchen" -- "Josie's Bar"
+        "Hell's Kitchen" -- "Church of the Holy Ghost"
+        "Hell's Kitchen" -- "Times Square"
+        "Hell's Kitchen" -- "Garment District"
+        "Hell's Kitchen" -- Chelsea
+
+        "Josie's Bar"[shape="box"]
+        "Church of the Holy Ghost"[shape="box"]
+
+        "Times Square" -- "Port Authority Bus Terminal"
+        "Times Square" -- "New York Public Library"
+        "Times Square" -- "Grand Central Terminal"
+        "Times Square" -- "Murray Hill"
+        "Times Square" -- "Garment District"
+
+        "Port Authority Bus Terminal"[shape="box"]
+        "New York Public Library"[shape="box"]
+        "Grand Central Terminal"[shape="box"]
+
+        "Murray Hill" -- "Grammercy Park"
+
+        "Grammercy Park" -- "East Village"
+        "Grammercy Park" -- "Flatiron District"
+
+        "East Village" -- "Union Square"
+        "East Village" -- "Alphabet City"
+        "East Village" -- "Lower East Side"
+        "East Village" -- "Greenwich Village"
+
+        "Union Square" -- "Flatiron District"
+        "Union Square" -- "Greenwich Village"
+        "Union Square" -- "East Village"
+        "Union Square" -- "Little Italy"
+
+        "Flatiron District" -- "Garment District"
+        "Flatiron District" -- Chelsea
+
+        "Garment District" -- Chelsea
+
+        Chelsea -- "Greenwich Village"
+
+        "Greenwich Village" -- SoHo
+
+        SoHo -- "Little Italy"
+        SoHo -- TriBeCa
+        SoHo -- "Lower East Side"
+
+        "Little Italy" -- "Lombardi's"
+        "Little Italy" -- "Lower East Side"
+        "Little Italy" -- Chinatown
+        "Little Italy" -- TriBeCa
+
+        "Lombardi's"[shape="box"]
+
+        "Lower East Side" -- "Alias Investigations" -- "Private Apartment"
+        "Lower East Side" -- "Reynolds Apartments"
+        "Lower East Side" -- "Alphabet City"
+
+        "Private Apartment"[shape="box"]
+        "Reynolds Apartments"[shape="box"]
+
+        "Alphabet City" -- "The Hole"
+        "Alphabet City" -- "N.L. Warehouse"
+        "Alphabet City" -- "T.A.M. Towers"
+
+        "The Hole"[shape="box"]
+        "N.L. Warehouse"[shape="box"]
+        "T.A.M. Towers"[shape="box"]
+
+        TriBeCa -- "Battery Park"
+        TriBeCa -- Chinatown
+        TriBeCa -- "Civic Center"
+
+        "Battery Park" -- "Finance District"
+        "Battery Park" -- "Civic Center"
+
+        "Finance District" -- "New York Harbor"
+        "Finance District" -- "Civic Center"
+
+        "New York Harbor" -- "Ellis Island"
+        "New York Harbor" -- "Liberty Island"
+        "New York Harbor" -- "Governors Island"
+
+        "Ellis Island"[shape="box"]
+        "Liberty Island"[shape="box"]
+        "Governors Island"[shape="box"]
+
+        "Civic Center" -- "City Hall"
+        "Civic Center" -- "N.Y.P.D. Headquarters"
+        "Civic Center" -- "Jacob K. Javits Federal Building"
+        "Civic Center" -- Brooklyn
+        "Civic Center" -- Chinatown
+
+        "City Hall"[shape="box"]
+        "N.Y.P.D. Headquarters"[shape="box"]
+        "Jacob K. Javits Federal Building"[shape="box"]
+
+        Brooklyn -- Chinatown
+        Brooklyn -- "Brooklyn Visitor Center"
+
+        "Brooklyn Visitor Center"[shape="box"]
+
+        Chinatown -- "Criminal Courts"
+
+        "Criminal Courts"[shape="box"]
+}
+
+"New Jersey" -- SoHo
+"New Jersey" -- "Hell's Kitchen"
+
+"J.F.K. International Airport" -- "Narita International Airport"
+"J.F.K. International Airport" -- "London Heathrow Airport"
